@@ -1,0 +1,7 @@
+spring.profiles.active: http_connectionserver:  port: 8088
+  servlet:    session:      cookie:        name: KSESSION
+spring:
+  security:
+    saml2:
+      relyingparty:
+        registration:          local:            signing:              credentials:              - private-key-location: "classpath:credentials/rp-private.key"                certificate-location: "classpath:credentials/rp-certificate.crt"                     identityprovider:              verification:                credentials:                  - certificate-location: "classpath:credentials/idp-public-cert.pem"              entity-id: rbs:ahold:idp              singlesignon:                url: http://localhost:7000/saml/sso

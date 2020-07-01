@@ -14,7 +14,8 @@
 	<version>1.0</version>
 	<packaging>war</packaging>
 	<name>saml-sp-service-provider</name>
-	<description>SAML SP Service Provider project for Spring Boot</description>
+	<description>SAML SP Service Provider project for Spring Boot
+	</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -29,6 +30,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -41,11 +46,17 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-saml2-service-provider -->
 		<dependency>
-			<groupId>org.springframework.security.extensions</groupId>
-			<artifactId>spring-security-saml-dsl</artifactId>
-			<version>1.0.0.M3</version>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-saml2-service-provider</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.security.oauth</groupId>
+			<artifactId>spring-security-oauth2</artifactId>
+			<version>2.0.17.RELEASE</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -63,7 +74,13 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/libs-milestone</url>
+		</repository>
+	</repositories>
 	<build>
 		<plugins>
 			<plugin>
