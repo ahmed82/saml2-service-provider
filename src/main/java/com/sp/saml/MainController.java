@@ -81,7 +81,7 @@ public class MainController {
 		//return userid.trim().toString()+"\n\n"+response.getBody();
 		
 		//return "http://localhost:3000"+"?code=";
-		return new RedirectView("http://localhost:3000&code="+code);
+		return new RedirectView("http://localhost:3000?code="+code);
 	}
 	
 	
